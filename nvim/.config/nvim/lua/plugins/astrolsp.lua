@@ -47,8 +47,8 @@ return {
       "lua_ls",
       "emmet_ls",
       "prismals",
-      "pyright",
-      "rust_analyzer",
+      -- "pyright",
+      -- "rust_analyzer",
     },
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields

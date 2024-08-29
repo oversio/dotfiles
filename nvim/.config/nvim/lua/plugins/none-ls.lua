@@ -25,7 +25,7 @@ return {
       -- null_ls.builtins.diagnostics.eslint_d, -- Linter for JS/TS/React/Next.js
       null_ls.builtins.diagnostics.stylelint, -- Linter for CSS/SASS/SCSS (if needed)
       null_ls.builtins.diagnostics.dotenv_linter, -- Linter for CSS/SASS/SCSS (if needed)
-      null_ls.builtins.diagnostics.markdownlint, -- Linter for CSS/SASS/SCSS (if needed)
+      -- null_ls.builtins.diagnostics.markdownlint, -- Linter for CSS/SASS/SCSS (if needed)
       null_ls.builtins.diagnostics.yamllint, -- Linter for CSS/SASS/SCSS (if needed)
 
       -- Code Actions

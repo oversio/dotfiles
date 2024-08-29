@@ -17,7 +17,6 @@ $nodejs\
 $php\
 $java\
 $kotlin\
-$haskell\
 $python\
 [](fg:teal bg:blue)\
 $docker_context\
@@ -27,6 +26,7 @@ $time\
 $line_break$character"""
 
 palette = 'catppuccin_mocha'
+add_newline = false
 
 [palettes.gruvbox_dark]
 color_fg0 = '#fbf1c7'
@@ -116,6 +116,8 @@ truncation_symbol = "…/"
 symbol = ""
 style = "bg:teal"
 format = '[[ $symbol $branch ](fg:base bg:green)]($style)'
+truncation_length = 20
+truncation_symbol = "…"
 
 [git_status]
 style = "bg:teal"
@@ -153,11 +155,6 @@ format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 
 [kotlin]
 symbol = ""
-style = "bg:teal"
-format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
-
-[haskell]
-symbol = ""
 style = "bg:teal"
 format = '[[ $symbol( $version) ](fg:base bg:teal)]($style)'
 
