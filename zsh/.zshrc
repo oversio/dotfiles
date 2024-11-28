@@ -198,6 +198,7 @@ alias gsmu="git submodule update"
 alias gsmi="git submodule init"
 alias gsmui="submodule update --init --recursive"
 alias gstam="git stash push -m"
+alias gst="git status -u"
 
 ### Git hub-flow
 alias ghf="git-hf"
