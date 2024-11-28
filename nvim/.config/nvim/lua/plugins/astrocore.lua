@@ -59,6 +59,10 @@ return {
           end,
           desc = "Close buffer from tabline",
         },
+        ["<Leader>sf"] = {
+          function() vim.lsp.buf.format { timeout_ms = 1000 } end,
+          desc = "Save without fomatting",
+        },
 
         -- tables with just a `desc` key will be registered with which-key if it's installed
         -- this is useful for naming menus

@@ -84,11 +84,6 @@ return {
     version = "*",
     opts = function() require("mini.bufremove").setup() end,
   },
-  -- {
-  --   "echasnovski/mini.animate",
-  --   version = "*",
-  --   opts = function() require("mini.animate").setup() end,
-  -- },
   {
     "kylechui/nvim-surround",
     event = { "BufReadPre", "BufNewFile" },
