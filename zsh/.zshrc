@@ -250,6 +250,14 @@ eval "$(starship init zsh)"
 # Set up fzf key bindings and fuzzy completion
 eval "$(fzf --zsh)"
 
+# --- setup fzf theme ---
+fg="#CBE0F0"
+bg="#011628"
+bg_highlight="#143652"
+purple="#B388FF"
+blue="#06BCE4"
+cyan="#2CF9ED"
+
 # --- Use fd instead of the fzf default find command ---
 export FZF_DEFAULT_COMMAND='fd --hidden --strip-cwd-prefix --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -289,6 +297,7 @@ source ~/fzf-git.sh/fzf-git.sh
 
 # --- Bat Theme ---
 export BAT_THEME="TwoDark"
+# export BAT_THEME="tokyonight_night"
 
 # ---- Zoxide (better cd) ----
 eval "$(zoxide init zsh)"
