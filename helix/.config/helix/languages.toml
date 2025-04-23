@@ -1,0 +1,69 @@
+#####################################
+# LSP CONFIGURATIONS
+#####################################
+
+[language-server.typescript-language-server]
+command = "typescript-language-server"
+args = ["--stdio"]
+
+[language-server.eslint]
+command = "vscode-eslint-language-server"
+args = ["--stdio"]
+config = { env = { NODE_OPTIONS = "--no-warnings" } }
+
+[language-server.tailwindcss]
+command = "tailwindcss-language-server"
+args = ["--stdio"]
+
+#####################################
+# LANGUAGE DEFINITIONS
+#####################################
+
+# ── TSX (React + TypeScript)
+[[language]]
+name = "tsx"
+language-servers = ["eslint", "tailwindcss", "typescript-language-server"]
+formatter = { command = "prettier", args = ["--stdin-filepath", "{}", "--plugin", "prettier-plugin-tailwindcss"] }
+auto-format = true
+
+# ── JSX (React + JavaScript)
+[[language]]
+name = "jsx"
+language-servers = ["eslint", "tailwindcss", "typescript-language-server"]
+formatter = { command = "prettier", args = ["--stdin-filepath", "{}", "--plugin", "prettier-plugin-tailwindcss"] }
+auto-format = true
+
+# ── TypeScript
+[[language]]
+name = "typescript"
+language-servers = ["eslint", "typescript-language-server"]
+formatter = { command = "prettier", args = ["--stdin-filepath", "{}", "--plugin", "prettier-plugin-tailwindcss"] }
+auto-format = true
+
+# ── JavaScript
+[[language]]
+name = "javascript"
+language-servers = ["eslint", "typescript-language-server"]
+formatter = { command = "prettier", args = ["--stdin-filepath", "{}", "--plugin", "prettier-plugin-tailwindcss"] }
+auto-format = true
+
+# ── HTML
+[[language]]
+name = "html"
+language-servers = ["tailwindcss"]
+formatter = { command = "prettier", args = ["--stdin-filepath", "{}"] }
+auto-format = true
+
+# ── CSS
+[[language]]
+name = "css"
+language-servers = ["tailwindcss"]
+formatter = { command = "prettier", args = ["--stdin-filepath", "{}"] }
+auto-format = true
+
+# ── JSON
+[[language]]
+name = "json"
+formatter = { command = "prettier", args = ["--stdin-filepath", "{}"] }
+auto-format = true
+

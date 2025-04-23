@@ -1,0 +1,16 @@
+theme = "onedark"
+
+[editor]
+line-number = "relative"
+cursorline = true
+# bufferline = "always" # Show the opened buffers 
+statusline.right = ["diagnostics", "selections", "position", "file-encoding"]
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
