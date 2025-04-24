@@ -301,3 +301,27 @@ export BAT_THEME="TwoDark"
 
 # ---- Zoxide (better cd) ----
 eval "$(zoxide init zsh)"
+
+## Drop git commits with fzf
+unalias grc 2>/dev/null
+grc() {
+  local commit=$(git log --oneline --color=always | fzf --ansi --no-sort --reverse \
+    --preview='git show --color=always $(echo {} | awk "{print \$1}")' \
+    --preview-window=down:70%)
+
+  if [[ -z "$commit" ]]; then
+    echo "🤷‍♂️ No commit selected"
+    return 1
+  fi
+
+  local hash=$(echo "$commit" | awk '{print $1}')
+  echo "All commits after $hash (the selected one) will be dropped."
+  read "confirm?Are you sure? [y/N] "
+
+  if [[ "$confirm" != [yY] ]]; then
+    echo "🙅‍♂️ Aborted."
+    return 1
+  fi
+
+  git reset --mixed "$hash"
+}
