@@ -17,5 +17,7 @@ return {
   { import = "astrocommunity.lsp.ts-error-translator-nvim" },
   { import = "astrocommunity.lsp.actions-preview-nvim" },
   { import = "astrocommunity.git.git-blame-nvim" },
+  { import = "astrocommunity.color.transparent-nvim" },
+  { import = "astrocommunity.colorscheme.onedarkpro-nvim" },
   -- import/override with your plugins folder
 }
