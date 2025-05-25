@@ -325,3 +325,15 @@ grc() {
 
   git reset --mixed "$hash"
 }
+# --- Laravel ---
+# Run: /bin/bash -c "$(curl -fsSL https://php.new/install/mac/8.4)" to install php, laravel installer and composer
+export PATH="/Users/overmartinez/.config/herd-lite/bin:$PATH"
+export PHP_INI_SCAN_DIR="/Users/overmartinez/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
+
+# pnpm
+export PNPM_HOME="/Users/overmartinez/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
