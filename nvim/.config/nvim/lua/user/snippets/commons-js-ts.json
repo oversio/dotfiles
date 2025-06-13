@@ -1,0 +1,158 @@
+{
+  "Console log -": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "cl-",
+    "body": [
+      "console.log('--------------------------------------------------')"
+    ],
+    "description": "Console log --"
+  },
+  "Console log label": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "cll",
+    "body": ["console.log('${1:val}->', ${1:val})${0}"],
+    "description": "Console log label"
+  },
+  "Console log value": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "cl",
+    "body": ["console.log({ value: ${1:'${2:val}'} })${0}"],
+    "description": "Console log value"
+  },
+  "Contant arrow function": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "caf",
+    "body": [
+      "const ${1:functionName} = (${2:argument}) => {",
+      "\t${3:// Do something...}",
+      "}"
+    ],
+    "description": "Create a constant with an arrow function like value"
+  },
+  "Arrow function": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "af",
+    "body": ["(${1:argument}) => {", "\t${2:// Do something...}", "}"],
+    "description": "Arrow function"
+  },
+  "Async arrow function": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "aaf",
+    "body": ["async (${1:argument}) => {", "\t${2:// Do something...}", "}"],
+    "description": "Async arrow function"
+  },
+  "Async variable arrow function": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "caaf",
+    "body": [
+      "const ${1:functionName} = async (${2:argument}) => {",
+      "\t${3:// Do something...}",
+      "}"
+    ],
+    "description": "Create a constant with an async arrow function like value"
+  },
+  "Key: Value": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "kv",
+    "body": ["${1:key}: ${2:\"${3:value}\"}"],
+    "description": "key: value"
+  },
+  "Export Const": {
+    "scope": "javascript,javascriptreact,typescript,typescriptreact",
+    "prefix": "ec",
+    "body": ["export const ${1:}"],
+    "description": "export const"
+  },
+  "Random number": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "random",
+    "body": ["Math.floor(Math.random() * ${1:10})${2: + 1}"],
+    "description": "Generate code to get a random number"
+  },
+  "Constant assignment": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "co",
+    "body": ["const ${1:constName} = ${2:value};"],
+    "description": "Constant assignment"
+  },
+  "Destructuring const assignment": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "dc",
+    "body": ["const { ${0:constName} } = ${1:value};"],
+    "description": "Destructuring const assignment"
+  },
+  "Else statement": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "el",
+    "body": ["else {", "\t${0:// Do something...}", "}"],
+    "description": "Else statement"
+  },
+  "For in loop": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "fi",
+    "body": [
+      "for (const ${1:key} in ${2:object}) {",
+      "\t${0:// Do something...}",
+      "}"
+    ],
+    "description": "For in loop"
+  },
+  "For of loop": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "fo",
+    "body": [
+      "for (const ${1:value} of ${2:array}) {",
+      "\t${3:// Do something...}",
+      "}"
+    ],
+    "description": "For of loop"
+  },
+  "Named function": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "fuc",
+    "body": [
+      "function ${1:functionName}(${2:argument}) {",
+      "\t${0:// Do something...}",
+      "}"
+    ],
+    "description": "Named function"
+  },
+  "Map function": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "map",
+    "body": [".map((${1:item}) => {", "\t${0:// Do something...}", "})"],
+    "description": "Map function"
+  },
+  "Reduce function": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "reduce",
+    "body": [
+      ".reduce((${1:previous}, ${2:current}) => {",
+      "\t${0:// Do something...}",
+      "})"
+    ],
+    "description": "Reduce function"
+  },
+  "Filter function": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "filter",
+    "body": [".filter((${1:item}) => {", "\t${0:// Do something...}", "})"],
+    "description": "Filter function"
+  },
+  "Find function": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "find",
+    "body": [".find((${1:item}) => {", "\t${0:// Do something...}", "})"],
+    "description": "Find function"
+  },
+  "Return promise": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "rp",
+    "body": [
+      "return new Promise((${1:resolve}, ${2:reject}) => {",
+      "\t${0:// Do something...}",
+      "});"
+    ],
+    "description": "Return promise"
+  }
+}

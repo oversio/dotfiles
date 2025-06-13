@@ -1,0 +1,33 @@
+{
+  "React Functional Component": {
+    "prefix": "rfc",
+    "body": [
+      "export function ${1:ComponentName}({ ${2:props} }) {",
+      "  return (",
+      "    <div className=\"${3:p-4}\">",
+      "      ${4:// content}",
+      "    </div>",
+      "  );",
+      "};"
+    ],
+    "description": "React Functional Component"
+  },
+  "useCallback Hook": {
+    "prefix": "ucb",
+    "body": [
+      "const ${1:callback} = useCallback((${2:args}) => {",
+      "  ${3:// callback}",
+      "}, [${4:deps}]);"
+    ],
+    "description": "useCallback hook"
+  },
+  "useMemo Hook": {
+    "prefix": "umm",
+    "body": [
+      "const ${1:memoizedValue} = useMemo(() => {",
+      "  ${2:// memoized value}",
+      "}, [${3:dependencies}]);"
+    ],
+    "description": "useMemo hook"
+  }
+}

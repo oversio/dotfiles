@@ -1,0 +1,80 @@
+{
+  "React Functional Component": {
+    "prefix": "rfc",
+    "body": [
+      "interface ${1:ComponentName}Props {",
+      "  ${2:prop}: ${3:type}",
+      "}",
+      "",
+      "export function ${1:ComponentName}({ ${4:props} }: ${1:ComponentName}Props) {",
+      "  return (",
+      "    <div ${5:className=\"${6:p-4}\"}>",
+      "      ${0:}",
+      "    </div>",
+      "  );",
+      "}"
+    ],
+    "description": "React Functional Component with TypeScript and TailwindCSS"
+  },
+  "useState Hook": {
+    "prefix": "usf",
+    "body": [
+      "const [${1:state}, set${1/(.*)/${1:/capitalize}/}] = useState${2:<${3:boolean}>}(${4:false});"
+    ],
+    "description": "useState hook with TypeScript"
+  },
+  "useEffect Hook": {
+    "prefix": "uef",
+    "body": [
+      "useEffect(() => {",
+      "  ${1:// effect}",
+      "}, [${2:deps}]);"
+    ],
+    "description": "useEffect hook"
+  },
+  "Export Interface": {
+    "prefix": "ei",
+    "body": [
+      "export interface ${1:InterfaceName} {",
+      "  ${0:// properties}",
+      "}"
+    ],
+    "description": "Export interface"
+  },
+  "Export Enum": {
+    "prefix": "ee",
+    "body": [
+      "export const enum ${1:EnumName} = {",
+      "  ${0:// properties}",
+      "};"
+    ],
+    "description": "Export type"
+  },
+  "Export Type": {
+    "prefix": "et",
+    "body": [
+      "export type ${1:TypeName} = {",
+      "  ${0:// properties}",
+      "};"
+    ],
+    "description": "Export type"
+  },
+  "useCallback Hook": {
+    "prefix": "ucb",
+    "body": [
+      "const ${1:callback} = useCallback((${2:args}) => {",
+      "  ${3:// callback}",
+      "}, [${4:deps}]);"
+    ],
+    "description": "useCallback hook"
+  },
+  "useMemo Hook": {
+    "prefix": "umm",
+    "body": [
+      "const ${1:memoizedValue} = useMemo(() => {",
+      "  ${2:// code}",
+      "}, [${3:deps}]);"
+    ],
+    "description": "useMemo hook"
+  }
+}

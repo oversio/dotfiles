@@ -1,4 +1,3 @@
-
 return {
   "goolord/alpha-nvim",
   config = function()
@@ -6,25 +5,25 @@ return {
     local dashboard = require "alpha.themes.dashboard"
 
     dashboard.section.header.val = {
-      "░███████╗░  ████╗░░░████╗  ░███████╗░",
-      "███╔══███╗  █████╗░█████║  ███╔══███╗",
-      "███║░░███║  ███╔████╔███║  █████████║",
-      "███║░░███║  ███║╚██╔╝███║  ███╔══███║",
-      "╚███████╔╝  ███║░╚═╝░███║  ███║░░███║",
-      "░╚══════╝░  ╚═╝░░░░░░░╚═╝  ╚═╝░░░░╚═╝",
+      "░███████╗░    ████╗░░░████╗    ░███████╗░",
+      "███╔══███╗    █████╗░█████║    ███╔══███╗",
+      "███║░░███║    ███╔████╔███║    █████████║",
+      "███║░░███║    ███║╚██╔╝███║    ███╔══███║",
+      "╚███████╔╝    ███║░╚═╝░███║    ███║░░███║",
+      "░╚══════╝░    ╚═╝░░░░░░░╚═╝    ╚═╝░░░░╚═╝",
     }
 
     -- Botones con los iconos exactos de la imagen
     dashboard.section.buttons.val = {
-      dashboard.button("n", "New File", ":ene <BAR> startinsert <CR>"),
-      dashboard.button("f", "  Find File", ":Telescope find_files <CR>"),
-      dashboard.button("o", "  Recent Files", ":Telescope oldfiles <CR>"),
-      dashboard.button("w", "󰊄  Find Word", ":Telescope live_grep <CR>"),
-      dashboard.button("'", "  Bookmarks", ":Telescope marks <CR>"),
-      dashboard.button("s", "  Last Session", ":SessionLoad <CR>"),
-      dashboard.button("c", "  Configuration", ":e $MYVIMRC <CR>"),
-      dashboard.button("u", "  Update Plugins", ":Lazy update<CR>"),
-      dashboard.button("q", "  Quit", ":qa<CR>"),
+      dashboard.button("n", "󰈔 New File", ":ene <BAR> startinsert <CR>"),
+      dashboard.button("f", "󰈞 Find File", ":Telescope find_files <CR>"),
+      dashboard.button("o", "󰋚 Recent Files", ":Telescope oldfiles <CR>"),
+      dashboard.button("w", "󰊄 Find Word", ":Telescope live_grep <CR>"),
+      dashboard.button("'", "󰃃 Bookmarks", ":Telescope marks <CR>"),
+      dashboard.button("s", "󰁯 Last Session", ":SessionLoad <CR>"),
+      dashboard.button("c", "󰒓 Configuration", ":e $MYVIMRC <CR>"),
+      dashboard.button("u", "󰚰 Update Plugins", ":Lazy update<CR>"),
+      dashboard.button("q", "󰗼 Quit", ":qa<CR>"),
     }
     -- Función para mostrar los plugins cargados
     local function footer()
