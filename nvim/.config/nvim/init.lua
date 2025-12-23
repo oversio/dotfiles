@@ -15,5 +15,7 @@ if not pcall(require, "lazy") then
   vim.cmd.quit()
 end
 
+vim.opt.autoread = true
+
 require "lazy_setup"
 require "polish"
