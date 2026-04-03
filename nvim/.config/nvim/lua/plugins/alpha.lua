@@ -1,5 +1,6 @@
 return {
   "goolord/alpha-nvim",
+  cond = not vim.g.vscode, -- Deshabilitar en VSCode
   config = function()
     local alpha = require "alpha"
     local dashboard = require "alpha.themes.dashboard"
