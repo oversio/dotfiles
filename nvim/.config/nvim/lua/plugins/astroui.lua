@@ -6,6 +6,7 @@
 ---@type LazySpec
 return {
   "AstroNvim/astroui",
+  cond = not vim.g.vscode, -- Deshabilitar en VSCode (usa temas de VSCode)
   ---@type AstroUIOpts
   opts = {
     -- change colorscheme

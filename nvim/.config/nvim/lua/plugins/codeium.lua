@@ -1,5 +1,6 @@
 return {
   "Exafunction/windsurf.vim",
+  cond = not vim.g.vscode, -- Deshabilitar si usas Copilot/IA en VSCode
   cmd = {
     "Codeium",
     "CodeiumEnable",
