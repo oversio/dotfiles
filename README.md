@@ -46,18 +46,52 @@ Fully configured [AstroNvim](https://astronvim.com/) setup with custom plugins a
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Install essential tools
-brew install neovim tmux zsh starship
+brew install neovim tmux zsh starship stow
 brew install --cask wezterm
 ```
 
 ### Quick Setup
+
+#### Using GNU Stow (Recommended)
+
+This repository uses [GNU Stow](https://www.gnu.org/software/stow/), a symlink farm manager, to manage dotfile symlinks. Stow automatically creates and manages symlinks from this repository to your home directory.
 
 ```bash
 # Clone this repository
 git clone https://github.com/yourusername/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 
-# Symlink configurations
+# Use stow to create symlinks for each configuration
+stow nvim
+stow zsh
+stow tmux
+stow startship
+stow wezterm
+stow helix
+
+# Or stow everything at once
+stow */
+
+# Reload your shell
+source ~/.zshrc
+```
+
+**Benefits of using Stow:**
+- ✨ Automatic symlink management
+- 🔄 Easy to unstow (remove) configurations with `stow -D <package>`
+- 🎯 Clean and organized package-based structure
+- 🛡️ Conflict detection before creating symlinks
+
+#### Manual Setup (Alternative)
+
+If you prefer not to use stow, you can create symlinks manually:
+
+```bash
+# Clone this repository
+git clone https://github.com/yourusername/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+
+# Symlink configurations manually
 ln -sf ~/dotfiles/nvim/.config/nvim ~/.config/nvim
 ln -sf ~/dotfiles/zsh/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/tmux/.tmux.conf ~/.tmux.conf
