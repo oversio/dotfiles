@@ -10,6 +10,7 @@ return {
       -- Make sure to use the names found in `:Mason`
       ensure_installed = {
         -- LSPs
+        "intelephense",
         "css-lsp",
         "emmet-ls",
         "eslint-lsp",

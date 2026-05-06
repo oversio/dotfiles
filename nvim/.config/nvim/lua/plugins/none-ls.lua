@@ -4,19 +4,21 @@
 return {
   "nvimtools/none-ls.nvim",
   opts = function(_, opts)
-    -- opts variable is the default configuration table for the setup function call
-    -- local null_ls = require "null-ls"
+    local null_ls = require "null-ls"
 
-    -- Check supported formatters and linters
-    -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins/formatting
-    -- https://github.com/nvimtools/none-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
-
-    -- Only insert new sources, do not replace the existing ones
-    -- (If you wish to replace, use `opts.sources = {}` instead of the `list_insert_unique` function)
     opts.sources = require("astrocore").list_insert_unique(opts.sources, {
-      -- Set a formatter
-      -- null_ls.builtins.formatting.stylua,
       null_ls.builtins.formatting.prettierd,
+      null_ls.builtins.formatting.djlint.with({
+        filetypes = { "twig", "html" },
+      }),
+      null_ls.builtins.formatting.pint.with({
+        command = function()
+          local local_pint = vim.fn.getcwd() .. "/vendor/bin/pint"
+          return vim.fn.executable(local_pint) == 1 and local_pint or "pint"
+        end,
+        filetypes = { "php" },
+      }),
+      null_ls.builtins.formatting.blade_formatter,
     })
   end,
 }
