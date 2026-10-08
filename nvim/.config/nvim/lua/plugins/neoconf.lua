@@ -5,7 +5,7 @@
 return {
   {
     "folke/neoconf.nvim",
-    cmd = "Neoconf",
+    lazy = false, -- MUST load before LSP — cmd = "Neoconf" made it lazy, breaking .neoconf.json
     priority = 1000, -- Load before LSP
     opts = {
       -- Import settings from other sources
@@ -60,6 +60,29 @@ return {
             return vim.tbl_deep_extend("force", base_config, neoconf_config or {})
           end,
         })
+
+        -- Propagate astrolsp.formatting settings from .neoconf.json
+        local astrolsp_neoconf = neoconf.get("astrolsp")
+        if astrolsp_neoconf and astrolsp_neoconf.formatting then
+          opts.formatting = opts.formatting or {}
+          local nf = astrolsp_neoconf.formatting
+          -- Merge format_on_save (supports both bool and table forms)
+          if nf.format_on_save ~= nil then
+            local override = type(nf.format_on_save) == "table" and nf.format_on_save
+              or { enabled = nf.format_on_save }
+            opts.formatting.format_on_save = vim.tbl_deep_extend(
+              "force",
+              opts.formatting.format_on_save or {},
+              override
+            )
+          end
+          if nf.timeout_ms ~= nil then opts.formatting.timeout_ms = nf.timeout_ms end
+          -- Extend disabled list (project entries are added on top of global ones)
+          if nf.disabled then
+            opts.formatting.disabled = opts.formatting.disabled or {}
+            vim.list_extend(opts.formatting.disabled, nf.disabled)
+          end
+        end
       end
       return opts
     end,

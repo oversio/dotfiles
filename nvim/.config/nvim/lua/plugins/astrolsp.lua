@@ -23,6 +23,11 @@ return {
           "php",
           "blade",
           "twig",
+          "astro",
+          "typescript",
+          "typescriptreact",
+          "javascript",
+          "javascriptreact",
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
           -- "txt",
@@ -106,6 +111,18 @@ return {
           callback = function(args)
             if require("astrolsp").config.features.codelens then vim.lsp.codelens.refresh { bufnr = args.buf } end
           end,
+        },
+      },
+      -- equivalente al `source.fixAll.eslint` on-save de VS Code:
+      -- aplica los auto-fixes de eslint (import/order, unused-imports, ...) antes de guardar.
+      -- El format_on_save de AstroLSP solo ejecuta formatters (prettier); los fixes de
+      -- eslint son code actions y necesitan este autocmd aparte.
+      eslint_fix_on_save = {
+        cond = function(client) return client.name == "eslint" and vim.fn.exists ":EslintFixAll" > 0 end,
+        {
+          event = "BufWritePre",
+          desc = "Fix all ESLint errors before saving (buffer)",
+          callback = function() vim.cmd.EslintFixAll() end,
         },
       },
     },
