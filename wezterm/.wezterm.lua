@@ -1,5 +1,4 @@
 local wezterm = require("wezterm")
-
 local config = wezterm.config_builder()
 
 -- config.font = wezterm.font("MesloLGS NF")
@@ -20,12 +19,18 @@ config.colors = {
 	brights = { "#214969", "#E52E2E", "#44FFB1", "#FFE073", "#A277FF", "#a277ff", "#24EAF7", "#24EAF7" },
 }
 
-config.font_size = 17
+config.font_size = 15
+config.line_height = 1.1
 
 config.enable_tab_bar = false
 
+-- Permite que macOS componga caracteres especiales (como ~) cuando se usa
+-- Right Option/Alt, en vez de que WezTerm lo intercepte como Meta.
+config.send_composed_key_when_right_alt_is_pressed = true
+config.send_composed_key_when_left_alt_is_pressed = false
+
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 0.80
+config.window_background_opacity = 0.85
 config.macos_window_background_blur = 30
 
 return config
