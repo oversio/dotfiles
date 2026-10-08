@@ -1,0 +1,49 @@
+{
+  "$schema": "https://raw.githubusercontent.com/folke/neoconf.nvim/main/schemas/neoconf.json",
+
+  // LSP server configurations
+  "lspconfig": {
+    // Example: Lua LSP settings for this project
+    "lua_ls": {
+      "Lua.diagnostics.globals": ["vim"],
+      "Lua.workspace.library": [
+        "${3rd}/luv/library"
+      ]
+    },
+
+    // Example: TypeScript/JavaScript settings
+    "vtsls": {
+      "typescript.inlayHints.parameterNames.enabled": "all",
+      "typescript.preferences.importModuleSpecifier": "relative"
+    },
+
+    // Example: ESLint for monorepos (auto-detect config files)
+    "eslint": {
+      "workingDirectory": {
+        "mode": "auto"
+      }
+    },
+
+    // Example: Python settings
+    "pyright": {
+      "python.analysis.typeCheckingMode": "basic",
+      "python.analysis.autoImportCompletions": true
+    }
+  },
+
+  // Plugin-specific settings
+  "plugins": {
+    // Example: Disable certain plugins for this project
+    "codeium": {
+      "enabled": false
+    }
+  },
+
+  // Neovim options (vim.opt)
+  "options": {
+    "tabstop": 2,
+    "shiftwidth": 2,
+    "expandtab": true,
+    "colorcolumn": "100"
+  }
+}
